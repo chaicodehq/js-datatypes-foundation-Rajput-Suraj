@@ -48,7 +48,13 @@
  *   removeLastItem(["tamatar", "pyaaz", "mirchi"])   // => "mirchi"
  */
 export function addToCart(cart, item) {
-  // Your code here
+  if (!Array.isArray(cart)) return -1;
+
+  if (typeof item !== "string" || item === "") {
+    return cart.length;
+  }
+
+  return cart.push(item);
 }
 
 export function addUrgentItem(cart, item) {
